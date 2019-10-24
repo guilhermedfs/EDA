@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include "fila_int.h"
 void apresentaMenu();
 void escolheopcao(int *opcao);
 void quantidade_elemento_inserir(int *qtd_elementos);
@@ -16,6 +17,9 @@ int main(){
                 quantidade_elemento_inserir(&qtd_elementos);
                 for(int i = 0; i<qtd_elementos; i++){
                     scanf("%d", &num);
+                    if (inicializa_fila() == 0)
+                    printf ("Não foi possível inicializar a fila!\n");
+                    else enfileira(num);
                 }
                 break;
             case 2:
